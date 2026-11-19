@@ -1,0 +1,683 @@
+/*=====================================================
+FORMA — дизайн-токены. Изменяйте цвета и отступы здесь.
+===================================================== */
+:root{
+  /* Палитра из предоставленных макетов */
+  --color-page: #10100f;
+  --color-footer: #1b1a17;
+  --color-text: #e8e3da;
+  --color-body: #aaa39a;
+  --color-muted: #8c857b;
+  --color-gold: #b49a76;
+  --color-gold-line: #826e52;
+  --color-divider: #302e29;
+  --color-nav-icon: #99958f;
+
+  /* Шрифты */
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+
+  /* Размеры текста */
+  --text-micro: 9px;
+  --text-small: 10px;
+  --text-body: 12px;
+  --text-nav: 13px;
+  --text-logo: 27px;
+
+  /* Все отступы */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 60px;
+  --space-11: 72px;
+
+  /* Контейнеры и высоты */
+  --desktop-header-gutter: clamp(42px, 4.9vw, 94px);
+  --footer-width: 1450px;
+  --footer-gutter: clamp(36px, 9.5vw, 172px);
+  --topline-height: 19px;
+  --header-height: 91px;
+  --mobile-topline-height: 72px;
+  --mobile-header-height: 94px;
+  --bottom-nav-height: 53px;
+  --transition: .22s ease;
+}
+
+*{
+    box-sizing:border-box
+}
+
+html,
+body,
+#app {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.site-footer {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+
+html{
+    scroll-behavior:smooth
+}
+
+body{
+  margin:0;
+  min-width:320px;
+  background:var(--color-page);
+  color:var(--color-text);
+  font-family:var(--font-sans);
+  -webkit-font-smoothing:antialiased;
+}
+a{
+  color:inherit;
+  text-decoration:none
+}
+button{font:inherit}
+.container{
+  width:min(var(--footer-width),calc(100% - var(--footer-gutter)*2));
+  margin-inline:auto;
+}
+
+/* Верхняя информационная строка */
+.topline{
+  height:var(--topline-height);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding-inline:var(--desktop-header-gutter);
+  border-bottom:1px solid var(--color-gold-line);
+  background:#080807;
+  color:#a9a39a;
+  font-size:var(--text-micro);
+  line-height:1;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+}
+.topline-location{
+    letter-spacing:.18em
+}
+
+/* Шапка */
+.site-header{
+  position:relative;
+  z-index:5;
+  background:var(--color-page);
+  border-bottom:1px solid var(--color-divider);
+}
+.header-main{
+  height:var(--header-height);
+  padding-inline:var(--desktop-header-gutter);
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+}
+.brand{
+  display:inline-flex;
+  align-items:center;
+  gap:15px;
+  width:max-content;
+}
+.brand-symbol{
+  position:relative;
+  display:block;
+  width:52px;
+  height:66px;
+  flex:none;
+}
+.brand-symbol::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:19px;
+  width:51px;
+  height:39px;
+  border-radius:50%;
+  background:linear-gradient(90deg,#d2c8b9 0%,#9c8c79 48%,#5d5145 50%,#c2b5a4 100%);
+}
+.brand-symbol::after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:29px;
+  width:9px;
+  background:linear-gradient(90deg,#777064,#39352f);
+  border-left:1px solid #a99b87;
+  border-right:1px solid #292621;
+}
+.brand-name{
+  color:var(--color-text);
+  font-size:var(--text-logo);
+  font-weight:500;
+  letter-spacing:.13em;
+  line-height:1;
+}
+.header-nav{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+.header-nav a{
+  color:var(--color-muted);
+  font-size:var(--text-nav);
+  transition:color var(--transition);
+}
+.header-nav a:first-child{color:var(--color-gold)}
+.header-nav a:hover{color:var(--color-text)}
+.header-contact{
+  justify-self:end;
+  color:#d0c9bf;
+  font-size:var(--text-small);
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  border-bottom:1px solid var(--color-gold-line);
+  padding-bottom:3px;
+  transition:color var(--transition);
+}
+.header-contact:hover{
+    color:var(--color-gold)
+}
+
+.mobile-category{
+    display:none
+}
+
+.menu-toggle{
+    display:none
+}
+
+/* Пустая область здесь — место для основного контента сайта */
+main{
+    min-height:314px
+}
+
+/* Подвал */
+.site-footer{
+  background:var(--color-footer);
+  border-top:1px solid var(--color-divider);
+}
+
+.footer-inner{
+  padding-top:59px;
+}
+
+.footer-columns{
+  display:grid;
+  grid-template-columns:1.08fr 1fr .9fr;
+  column-gap:clamp(50px,8vw,150px);
+  min-height:179px;
+}
+
+.footer-about{
+    text-align:left
+}
+
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:0 0 30px 30px;
+}
+
+.footer-brand .brand-symbol{
+  width:29px;
+  height:36px;
+}
+
+.footer-brand .brand-symbol::before{
+  top:10px;
+  width:28px;
+  height:23px;
+}
+
+.footer-brand .brand-symbol::after{
+  left:16px;
+  width:6px;
+}
+
+.footer-brand .brand-name{
+  font-size:20px;
+  letter-spacing:.13em;
+}
+
+.footer-tagline{
+  margin:0 0 5px;
+  color:#aaa095;
+  font:italic 14px/1.5 var(--font-serif);
+  text-align:center;
+}
+
+.footer-description{
+  max-width:280px;
+  margin:0;
+  color:var(--color-body);
+  font-size:var(--text-body);
+  line-height:1.85;
+}
+
+.footer-heading{
+  margin:4px 0 23px;
+  color:var(--color-gold);
+  font-size:var(--text-micro);
+  font-weight:400;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+}
+
+.footer-links,.footer-contacts{
+  display:grid;
+  justify-items:start;
+  gap:14px;
+}
+
+.footer-links a,.footer-contacts a{
+  color:var(--color-body);
+  font-size:var(--text-body);
+  transition:color var(--transition);
+}
+
+.footer-links a:hover,.footer-contacts a:hover{
+    color:var(--color-gold)
+}
+
+.footer-contacts{
+    gap:19px
+}
+.footer-contacts a:last-child{
+    font-family:var(--font-serif);
+    font-size:13px;
+    letter-spacing:.04em
+}
+
+.footer-bottom{
+  min-height:48px;
+  border-top:1px solid var(--color-divider);
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  align-items:center;
+  gap:15px;
+}
+
+.copyright,.legal-links a{
+  color:#777168;
+  font-size:8px;
+  letter-spacing:.08em;
+}
+
+.credit{
+  justify-self:center;
+  color:#8d877f;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.16em;
+  white-space:nowrap;
+}
+
+.legal-links{
+  justify-self:end;
+  display:flex;
+  gap:24px;
+}
+
+.legal-links a{
+    white-space:nowrap;
+    transition:color var(--transition)
+}
+
+.legal-links a:hover{
+    color:var(--color-gold)
+}
+
+/* Нижняя мобильная панель навигации */
+.mobile-bottom-nav{
+    display:none
+}
+
+/* Планшеты */
+@media(max-width:900px) and (min-width:601px){
+  :root{
+    --desktop-header-gutter:32px;
+    --footer-gutter:48px;
+    --header-height:82px;
+  }
+
+  .brand-symbol{
+    transform:scale(.86);
+    transform-origin:left center;
+    width:45px
+  }
+
+  .brand-name{
+    font-size:23px
+  }
+
+  .header-nav{
+    gap:17px
+  }
+
+  .header-nav a{
+    font-size:11px
+  }
+
+  .footer-columns{
+    column-gap:34px;
+    grid-template-columns:1.1fr .8fr .9fr
+  }
+
+  .footer-brand{
+    margin-left:0
+  }
+
+  .footer-description{
+    max-width:235px
+  }
+
+  .legal-links{
+    gap:12px
+  }
+}
+
+/* Мобильный макет 393 × 852 */
+@media(max-width:600px){
+  :root{
+    --footer-gutter:0px;
+    --mobile-topline-height:72px;
+    --mobile-header-height:94px;
+  }
+
+  #app {
+        min-height: 100vh;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+
+  body{
+    padding-bottom:var(--bottom-nav-height)
+  }
+
+  .topline{
+    height:var(--mobile-topline-height);
+    padding:52px 4px 0;
+    font-size:7px;
+    letter-spacing:.12em;
+    white-space:nowrap;
+  }
+
+  .topline-location{
+    letter-spacing:.13em
+  }
+
+  .header-main{
+    height:var(--mobile-header-height);
+    padding:0 19px;
+    display:flex;
+    flex-wrap:wrap;
+    align-content:flex-start;
+    justify-content:flex-start;
+  }
+
+  .header-main>.brand{
+    height:65px;
+    gap:10px;
+  }
+
+  .header-main .brand-symbol{
+    width:45px;
+    height:56px;
+    transform:scale(.83);
+    transform-origin:left center
+  }
+
+  .header-main .brand-name{
+    font-size:23px
+  }
+
+  .header-nav,.header-contact{
+    display:none
+  }
+
+  .mobile-category{
+    display:block;
+    width:100%;
+    height:29px;
+    padding-top:0;
+    border-bottom:1px solid var(--color-divider);
+    color:var(--color-gold);
+    font-size:8px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+  }
+
+  main{
+    display:none
+  }
+
+  .footer-inner{
+    padding:51px 20px 0
+  }
+
+  .footer-columns{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    min-height:0;
+    gap:0;
+  }
+
+  .footer-about{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+  }
+
+  .footer-brand{
+    margin:0 0 12px;
+    gap:10px;
+  }
+
+  .footer-brand .brand-symbol{
+    width:39px;
+    height:47px
+  }
+
+  .footer-brand .brand-symbol::before{
+    top:14px;
+    width:37px;
+    height:27px
+  }
+
+  .footer-brand .brand-symbol::after{
+    left:21px;
+    width:7px
+  }
+
+  .footer-brand .brand-name{
+    font-size:21px
+  }
+
+  .footer-tagline{
+    margin:0 0 9px;
+    font-size:14px;
+  }
+
+  .footer-description{
+    max-width:300px;
+    font-size:12px;
+    line-height:1.9;
+  }
+
+  .footer-nav-block{
+    margin-top:21px;
+    width:100%;
+  }
+
+  .footer-heading{
+    margin:0 0 22px;
+    font-size:9px;
+    letter-spacing:.2em;
+  }
+
+  .footer-links{
+    justify-items:center;
+    gap:15px;
+  }
+
+  .footer-links a{
+    font-size:14px
+  }
+
+  .footer-contact-block{
+    width:100%;
+    margin-top:32px;
+  }
+
+  .footer-contact-block .footer-heading{
+    margin-bottom:23px
+  }
+
+  .footer-contacts{
+    justify-items:center;
+    gap:19px;
+  }
+
+  .footer-contacts a{
+    font-size:14px
+  }
+
+  .footer-contacts a:last-child{
+    font-size:14px
+  }
+
+  .footer-bottom{
+    margin-top:36px;
+    min-height:111px;
+    padding:20px 9px 13px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items:stretch;
+    gap:11px;
+    text-align:center;
+  }
+
+  .copyright{
+    font-size:8px;
+    letter-spacing:.09em
+  }
+
+  .legal-links{
+    width:100%;
+    justify-content:space-between;
+    gap:8px;
+  }
+
+  .legal-links a{
+    font-size:8px;
+    letter-spacing:.03em
+  }
+
+  .credit{
+    order:3;
+    margin-top:0;
+    font-size:12px;
+    letter-spacing:.16em;
+  }
+  
+  .mobile-bottom-nav{
+    position:fixed;
+    z-index:30;
+    left:0;
+    right:0;
+    bottom:0;
+    height:var(--bottom-nav-height);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    background:#11100f;
+    border-top:1px solid var(--color-divider);
+  }
+
+  .mobile-bottom-nav a{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:3px;
+    color:var(--color-nav-icon);
+    font-size:7px;
+    text-transform:uppercase;
+  }
+  .mobile-bottom-nav svg{
+    width:22px;
+    height:22px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+
+  .mobile-bottom-nav a:first-child svg{
+    fill:currentColor;
+    stroke:currentColor
+  }
+  .mobile-bottom-nav a:first-child{
+    color:#aaa49b
+  }
+}
+
+/* Очень узкие телефоны */
+@media(max-width:360px){
+  .topline{
+    font-size:6px
+  }
+  .legal-links a{
+    font-size:7px
+  }
+  .footer-description{
+    font-size:11px
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    scroll-behavior:auto!important;
+    transition:none!important
+  }
+}
+/* Логотип — исходный SVG из макета */
+.brand-logo-image { display:block; width:52px; height:66px; object-fit:contain; }
+.footer-brand .brand-logo-image { width:29px; height:36px; }
+@media(max-width:900px) and (min-width:601px) {
+  .brand-logo-image { width:45px; height:58px; }
+}
+@media(max-width:600px) {
+  .header-main .brand-logo-image { width:45px; height:56px; }
+  .footer-brand .brand-logo-image { width:39px; height:47px; }
+}
