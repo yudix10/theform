@@ -9,11 +9,19 @@ import ceramicImage from '../assets/images/png/1-products/03.png'
     <div class="focus-inner">
       <div class="focus-heading">
         <div>
-          <span class="focus-eyebrow">ОТОБРАННОЕ ВРУЧНУЮ</span>
-          <h2>В центре <em>внимания.</em></h2>
+          <span class="focus-eyebrow">
+          ОТОБРАННОЕ ВРУЧНУЮ
+          </span>
+
+          <h2>
+          В центре <em>внимания.</em>
+          </h2>
+
         </div>
 
-        <a href="#collection" class="focus-all">ВСЯ КОЛЛЕКЦИЯ</a>
+        <a href="#collection" class="focus-all">
+        <span>ВСЯ КОЛЛЕКЦИЯ</span>
+        </a>
       </div>
 
       <div class="focus-gallery">

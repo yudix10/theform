@@ -273,6 +273,7 @@ main{
 }
 
 .footer-description{
+  text-align:center;
   max-width:280px;
   margin:0;
   color:var(--color-body);
@@ -1304,4 +1305,65 @@ main{
 @media(max-width:600px) {
   .header-main .brand-logo-image { width:45px; height:56px; }
   .footer-brand .brand-logo-image { width:39px; height:47px; }
+}
+
+
+/* MOBILE ART-DIRECTION — точная композиция по предоставленному макету */
+.mobile-section-label { display: none; }
+@media (max-width: 600px) {
+  .topline { height: 62px; padding: 42px 4px 0; font-size: 6px; letter-spacing: .105em; }
+  .topline-location { letter-spacing: .09em; }
+  .site-header { position: relative; top: auto; }
+  .header-main { height: 56px; padding: 0 18px; display: flex; align-items: center; }
+  .header-main > .brand { height: 54px; gap: 9px; }
+  .header-main .brand-logo-image { width: 37px; height: 46px; }
+  .header-main .brand-name { font-size: 20px; letter-spacing: .13em; }
+  .header-main .mobile-category { display: none; }
+  .hero { min-height: 260px; height: 260px; align-items: flex-start; }
+  .hero-image { object-position: 59% 52%; }
+  .hero-overlay { background: linear-gradient(90deg, rgba(10,9,8,.82), rgba(10,9,8,.43) 62%, rgba(10,9,8,.22)), linear-gradient(0deg, rgba(10,9,8,.52), transparent 55%); }
+  .hero-content { width: calc(100% - 36px); margin: 0 18px; padding: 7px 0 0; }
+  .hero-content h1 { font-size: clamp(35px, 10.5vw, 40px); line-height: 1.12; letter-spacing: -.055em; font-weight: 300; }
+  .hero-content h1 span { margin-top: 0; font-size: 1.02em; }
+  .hero-description { max-width: 300px; margin: 17px 0 10px; font-size: 8px; line-height: 1.5; }
+  .hero-button { min-width: 194px; height: 36px; padding: 0 12px 0 16px; gap: 12px; font-size: 7px; }
+  .hero-arrow { font-size: 20px; }
+  .hero-bottom { display: none; }
+  .mobile-section-label { display: block; height: 39px; margin: 0 17px; padding-top: 12px; border-bottom: 1px solid var(--color-divider); color: var(--color-gold); font-size: 7px; letter-spacing: .13em; }
+  .philosophy { width: calc(100% - 38px); padding: 29px 0 25px; display: grid; grid-template-columns: 1fr .78fr; grid-template-areas: "image symbol" "content content"; align-items: center; column-gap: 24px; row-gap: 17px; }
+  .philosophy-image-wrap { grid-area: image; width: 100%; padding-top: 18px; }
+  .section-number { top: 0; font-size: 6px; letter-spacing: .12em; }
+  .philosophy-image { width: 100%; aspect-ratio: 1.12 / 1; border-radius: 18px; }
+  .philosophy-symbol { grid-area: symbol; display: flex; min-width: 0; }
+  .philosophy-symbol img { width: 100%; max-width: 108px; }
+  .philosophy-content { grid-area: content; width: 100%; }
+  .eyebrow { margin: 0 0 20px -11px; font-size: 7px; letter-spacing: .08em; }
+  .philosophy-content h2 { margin-left: -10px; width: calc(100% + 20px); font-size: clamp(29px, 9.3vw, 36px); line-height: 1.03; letter-spacing: -.065em; white-space: nowrap; }
+  .philosophy-content h2 span { margin-top: -1px; text-align: right; }
+  .philosophy-content p { margin: 22px 0 10px; font-size: 7px; line-height: 1.55; }
+  .philosophy-link { font-size: 6px; margin-right: 0; }
+  .focus-section { padding: 40px 8px 36px; }
+  .focus-heading { align-items: flex-end; margin: 0 11px 17px; }
+  .focus-eyebrow { margin-bottom: 5px; font-size: 7px; letter-spacing: .08em; }
+  .focus-heading h2 { font-size: clamp(29px, 9vw, 36px); line-height: 1.02; letter-spacing: -.06em; white-space: nowrap; }
+  .focus-all { margin-bottom: 4px; font-size: 6px; white-space: nowrap; }
+  .focus-gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; align-items: start; }
+  .focus-card--light { margin-top: 23px; }
+  .focus-card--ceramic { grid-column: auto; width: 100%; margin: 0; }
+  .focus-image, .focus-card--light .focus-image { aspect-ratio: 1 / 1; border-radius: 17px; }
+  .focus-caption { min-height: 25px; margin-top: 7px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 3px; text-align: center; font-size: 6px; letter-spacing: .12em; white-space: nowrap; }
+  .approach-section { min-height: 345px; padding: 58px 12px 48px; background: #1b1a18; }
+  .approach-eyebrow { margin-bottom: 39px; font-size: 6px; }
+  .approach-content blockquote { font-size: clamp(27px, 8.7vw, 34px); line-height: 1.9; letter-spacing: -.045em; white-space: nowrap; }
+  .approach-caption { margin-top: 38px; font-size: 5px; letter-spacing: .17em; }
+  .home-main { padding-bottom: 0; }
+  .footer-inner { padding-top: 48px; }
+  .site-footer { margin-top: 0; }
+  .mobile-bottom-nav { height: var(--bottom-nav-height); }
+}
+@media (max-width: 360px) {
+  .philosophy-content h2 { font-size: 29px; }
+  .focus-heading h2 { font-size: 28px; }
+  .focus-caption { font-size: 5px; }
+  .approach-content blockquote { font-size: 26px; }
 }

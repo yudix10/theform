@@ -42,6 +42,7 @@ import FocusSection from './components/FocusSection.vue'
         <a href="#philosophy">ЛИСТАЙТЕ ВНИЗ ↓</a>
       </div>
     </section>
+    <div class="mobile-section-label">ОБЪЕКТЫ · 2026</div>
 
     <!-- БЛОК О ФИЛОСОФИИ -->
     <section class="philosophy" id="philosophy">
@@ -86,4 +87,3 @@ import FocusSection from './components/FocusSection.vue'
 
   <SiteFooter />
 </template>
-
