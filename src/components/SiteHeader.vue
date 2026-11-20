@@ -1,5 +1,5 @@
 <script setup>
-import logoUrl from '../assets/images/forma-logo.svg'
+import logoUrl from '../assets/images/svg/forma-logo.svg'
 </script>
 
 <template>

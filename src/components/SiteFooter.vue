@@ -1,5 +1,5 @@
 <script setup>
-import logoUrl from '../assets/images/forma-logo.svg'
+import logoUrl from '../assets/images/svg/forma-logo.svg'
 const navigation = [
   { label: 'Главная', href: '#home' },
   { label: 'Коллекция', href: '#collection' },
