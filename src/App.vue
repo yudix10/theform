@@ -1,4 +1,5 @@
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import SiteHeader from './components/SiteHeader.vue'
 import SiteFooter from './components/SiteFooter.vue'
 
@@ -6,12 +7,20 @@ import heroImage from './assets/images/png/Home.png'
 import philosophyImage from './assets/images/png/2-about-philosophy/картина-о-философии.png'
 import logoImage from './assets/images/svg/forma1.svg'
 import FocusSection from './components/FocusSection.vue'
+import StoriesPage from './components/StoriesPage.vue'
+
+const isStoriesPage = ref(window.location.hash === '#stories' || window.location.hash.startsWith('#story-'))
+const syncPage = () => { isStoriesPage.value = window.location.hash === '#stories' || window.location.hash.startsWith('#story-') }
+onMounted(() => window.addEventListener('hashchange', syncPage))
+onBeforeUnmount(() => window.removeEventListener('hashchange', syncPage))
 </script>
 
 <template>
-  <SiteHeader />
+  <SiteHeader :page="isStoriesPage ? 'stories' : 'home'" />
 
-  <main class="home-main">
+  <StoriesPage v-if="isStoriesPage" />
+
+  <main v-else class="home-main">
 
     <!-- ПЕРВЫЙ ЭКРАН -->
     <section class="hero" id="home">
@@ -42,7 +51,6 @@ import FocusSection from './components/FocusSection.vue'
         <a href="#philosophy">ЛИСТАЙТЕ ВНИЗ ↓</a>
       </div>
     </section>
-    <div class="mobile-section-label">ОБЪЕКТЫ · 2026</div>
 
     <!-- БЛОК О ФИЛОСОФИИ -->
     <section class="philosophy" id="philosophy">
