@@ -5,6 +5,7 @@ import SiteFooter from './components/SiteFooter.vue'
 import heroImage from './assets/images/png/Home.png'
 import philosophyImage from './assets/images/png/2-about-philosophy/картина-о-философии.png'
 import logoImage from './assets/images/svg/forma1.svg'
+import FocusSection from './components/FocusSection.vue'
 </script>
 
 <template>
@@ -79,7 +80,7 @@ import logoImage from './assets/images/svg/forma1.svg'
 
     </section>
 
-    <!-- Следующие блоки главной страницы добавим ниже -->
+    <FocusSection />
 
   </main>
 

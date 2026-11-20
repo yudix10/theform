@@ -595,6 +595,7 @@ main{
   object-fit: contain;
 }
 
+
 /* Планшеты */
 
 @media (max-width: 900px) and (min-width: 601px) {
@@ -718,6 +719,267 @@ main{
   }
 }
 
+/* ================================
+   FOCUS — В ЦЕНТРЕ ВНИМАНИЯ
+================================ */
+
+.focus-section {
+  width: 100%;
+  background: #10100f;
+  color: #e6e0d7;
+  padding: 72px 10.05% 76px;
+  box-sizing: border-box;
+}
+
+.focus-inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.focus-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.focus-eyebrow,
+.approach-eyebrow {
+  display: block;
+  font-family: inherit;
+  font-size: 8px;
+  letter-spacing: 0.04em;
+  color: #b99a6c;
+  margin-bottom: 12px;
+}
+
+.focus-heading h2 {
+  margin: 0;
+  font-size: clamp(30px, 3.5vw, 36px);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.focus-heading h2 em {
+  color: #c4a477;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.focus-all {
+  color: #aaa49a;
+  font-size: 7px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  letter-spacing: 0.04em;
+  margin-bottom: 7px;
+  transition: color 0.3s ease;
+}
+
+.focus-all:hover {
+  color: #c4a477;
+}
+
+.focus-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  align-items: start;
+}
+
+.focus-card {
+  min-width: 0;
+}
+
+.focus-card--light {
+  margin-top: 46px;
+}
+
+.focus-card--ceramic {
+  margin-top: 0;
+}
+
+.focus-image {
+  width: 100%;
+  aspect-ratio: 1.12 / 1;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #292723;
+}
+
+.focus-card--light .focus-image {
+  aspect-ratio: 1.12 / 1;
+}
+
+.focus-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.focus-card:hover .focus-image img {
+  transform: scale(1.04);
+}
+
+.focus-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+  color: #aaa49a;
+  font-size: 6px;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+}
+
+/* ================================
+   APPROACH — НАШ ПОДХОД
+================================ */
+
+.approach-section {
+  width: 100%;
+  min-height: 265px;
+  box-sizing: border-box;
+  background: #1c1b19;
+  color: #e7e1d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 52px 20px;
+  text-align: center;
+}
+
+.approach-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.approach-eyebrow {
+  margin-bottom: 14px;
+}
+
+.approach-content blockquote {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(29px, 3.5vw, 36px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.approach-content blockquote em {
+  color: #c4a477;
+  font-weight: 400;
+}
+
+.approach-caption {
+  margin-top: 18px;
+  color: #8e8981;
+  font-size: 6px;
+  letter-spacing: 0.16em;
+}
+
+/* ================================
+   TABLET
+================================ */
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .focus-section {
+    padding: 65px 6% 65px;
+  }
+
+  .focus-card--light {
+    margin-top: 35px;
+  }
+
+  .focus-image {
+    border-radius: 10px;
+  }
+
+  .approach-section {
+    min-height: 245px;
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+  .focus-section {
+    padding: 54px 20px 48px;
+  }
+
+  .focus-heading {
+    align-items: flex-end;
+    margin-bottom: 24px;
+  }
+
+  .focus-heading h2 {
+    font-size: 29px;
+  }
+
+  .focus-eyebrow {
+    font-size: 7px;
+    margin-bottom: 10px;
+  }
+
+  .focus-all {
+    font-size: 6px;
+    white-space: nowrap;
+  }
+
+  .focus-gallery {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+    row-gap: 24px;
+  }
+
+  .focus-card--light {
+    margin-top: 25px;
+  }
+
+  .focus-card--ceramic {
+    grid-column: 1 / -1;
+    width: 72%;
+    margin-left: auto;
+    margin-top: -5px;
+  }
+
+  .focus-image {
+    aspect-ratio: 1 / 1.05;
+    border-radius: 9px;
+  }
+
+  .focus-card--light .focus-image {
+    aspect-ratio: 1 / 1.05;
+  }
+
+  .focus-caption {
+    font-size: 6px;
+    flex-wrap: wrap;
+    margin-top: 7px;
+  }
+
+  .approach-section {
+    min-height: 230px;
+    padding: 45px 15px;
+  }
+
+  .approach-content blockquote {
+    font-size: clamp(25px, 7vw, 31px);
+  }
+
+  .approach-caption {
+    font-size: 5px;
+    margin-top: 15px;
+  }
+}
 
 /* Планшеты */
 @media(max-width:900px) and (min-width:601px){
