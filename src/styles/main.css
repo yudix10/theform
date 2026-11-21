@@ -2814,3 +2814,106 @@ main {
     font-size: 4.5px;
   }
 }
+
+
+/* =========================================
+   MOBILE FIX — HEADER + BOTTOM NAV
+   ========================================= */
+
+@media (max-width: 600px) {
+  /* Убираем лишнюю полосу над шапкой */
+  .topline {
+    display: none !important;
+  }
+
+  /* Компактная закреплённая шапка */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: rgba(16, 16, 15, 0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid #302e29;
+  }
+
+  .header-main {
+    height: 64px !important;
+    min-height: 64px;
+    padding: 0 20px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-main > .brand {
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header-main .brand-logo-image {
+    width: 39px;
+    height: 48px;
+  }
+
+  .header-main .brand-name {
+    font-size: 21px;
+    letter-spacing: 0.13em;
+  }
+
+  /* Нижняя навигация с учётом safe area iPhone */
+  body {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .mobile-bottom-nav {
+    position: fixed;
+    z-index: 1200;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: calc(60px + env(safe-area-inset-bottom));
+    padding:
+      5px 8px
+      calc(5px + env(safe-area-inset-bottom));
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+
+    background: rgba(27, 26, 23, 0.97);
+    border-top: 1px solid #35322c;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    min-height: 48px;
+    color: #99958f;
+    font-size: 7px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .mobile-bottom-nav img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+  }
+
+  .mobile-bottom-nav a:first-child {
+    color: #d0c4b2;
+  }
+}
