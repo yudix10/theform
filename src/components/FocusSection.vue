@@ -1,7 +1,7 @@
 <script setup>
-import furnitureImage from '../assets/images/png/1-products/01.png'
-import lightImage from '../assets/images/png/1-products/02.png'
-import ceramicImage from '../assets/images/png/1-products/03.png'
+import furnitureImage from '../assets/images/png/3-in-focus/in-focus1.png'
+import lightImage from '../assets/images/png/3-in-focus/in-focus2.png'
+import ceramicImage from '../assets/images/png/3-in-focus/in-focus3.png'
 </script>
 
 <template>

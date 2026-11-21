@@ -95,6 +95,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
 button {
   font: inherit;
 }
@@ -601,6 +602,50 @@ main {
   width: min(100%, 115px);
   height: auto;
   object-fit: contain;
+}
+
+/* Кнопка открытия карточки */
+.product-card-open {
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(190, 171, 139, 0.65);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.product-card-open::before,
+.product-card-open::after {
+  content: "";
+  position: absolute;
+  background: #c9b18b;
+  border-radius: 1px;
+}
+
+.product-card-open::before {
+  width: 6px;
+  height: 0.9px;
+}
+
+.product-card-open::after {
+  width: 0.9px;
+  height: 6px;
+}
+
+.product-card-open img {
+  text-align: center;
+  width: 7px;
+  height: 7px;
+  object-fit: contain;
+  opacity: 0.5;
+}
+
+.product-card:hover .product-card-open {
+  border-color: #c9b18b;
+  background: rgba(201, 177, 139, 0.08);
 }
 
 /* Планшеты */
@@ -1969,28 +2014,64 @@ main {
   font-size: 13px;
   line-height: 1.6;
 }
+/* Категории коллекции — стиль минималистичной навигации */
 .collection-filters {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 25px;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  border-bottom: 1px solid rgba(190, 171, 139, 0.25);
+  padding-bottom: 14px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+
+.collection-filters::-webkit-scrollbar {
+  display: none;
+}
+
 .collection-filters button {
-  padding: 10px 14px;
-  border: 1px solid var(--color-divider);
-  border-radius: 25px;
-  background: transparent;
-  color: var(--color-body);
-  font-size: 8px;
-  letter-spacing: 0.1em;
+  position: relative;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  border: none !important;
+  border-radius: 0 !important;
+  outline: none;
+  background: transparent !important;
+  color: #77736d;
+  font-size: 11px;
+  font-weight: 400;
+  white-space: nowrap;
   cursor: pointer;
+  transition: color 0.25s ease;
 }
-.collection-filters button.active,
-.collection-filters button:hover {
-  border-color: var(--color-gold-line);
-  background: #29251f;
-  color: var(--color-gold);
+
+.collection-filters button.active {
+  color: #d4c4a8;
 }
+
+.collection-filters button.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  width: 100%;
+  height: 1px;
+  background: #c6b18e;
+}
+
+@media (max-width: 600px) {
+  .collection-filters {
+    gap: 22px;
+    padding-bottom: 13px;
+  }
+
+  .collection-filters button {
+    font-size: 9px;
+  }
+}
+
 .collection-grid {
   width: min(1450px, calc(100% - var(--footer-gutter) * 2));
   margin: auto;

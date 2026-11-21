@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
+import plusIcon from '../assets/images/svg/+.svg';
 import p01 from '../assets/images/png/1-products/01.png';
 import p02 from '../assets/images/png/1-products/02.png';
 import p03 from '../assets/images/png/1-products/03.png';
@@ -15,7 +16,7 @@ import p12 from '../assets/images/png/1-products/12.png';
 const products = [
   {
     image: p01,
-    category: 'МЕБЕЛЬ · 01',
+    category: '01 / МЕБЕЛЬ',
     name: 'Кресло «Тишина»',
     description: 'Сочетание спокойной формы, мягкой текстуры и выразительной геометрии.',
     year: '2025',
@@ -23,7 +24,7 @@ const products = [
   },
   {
     image: p02,
-    category: 'СВЕТ · 02',
+    category: '02 / СВЕТ',
     name: 'Светильник «Арка»',
     description: 'Свет становится самостоятельным объектом, формируя камерное настроение.',
     year: '2025',
@@ -31,7 +32,7 @@ const products = [
   },
   {
     image: p03,
-    category: 'КЕРАМИКА · 03',
+    category: '03 / КЕРАМИКА',
     name: 'Объект «Терра»',
     description: 'Естественная пластика и тонкая фактура делают предмет выразительным.',
     year: '2026',
@@ -39,7 +40,7 @@ const products = [
   },
   {
     image: p04,
-    category: 'АРТ-ОБЪЕКТЫ · 04',
+    category: '04 / АРТ-ОБЪЕКТЫ',
     name: 'Композиция №04',
     description: 'Абстрактная композиция на границе предметного дизайна и искусства.',
     year: '2025',
@@ -47,7 +48,7 @@ const products = [
   },
   {
     image: p05,
-    category: 'МЕБЕЛЬ · 05',
+    category: '05 / МЕБЕЛЬ',
     name: 'Стол «Баланс»',
     description: 'Сдержанная основа, ясная геометрия и натуральная древесина.',
     year: '2025',
@@ -55,7 +56,7 @@ const products = [
   },
   {
     image: p06,
-    category: 'СВЕТ · 06',
+    category: '06 / СВЕТ',
     name: 'Лампа «Контур»',
     description: 'Светильник с мягким рассеянным светом для интерьерной композиции.',
     year: '2025',
@@ -63,7 +64,7 @@ const products = [
   },
   {
     image: p07,
-    category: 'АРТ-ОБЪЕКТЫ · 07',
+    category: '07 / КЕРАМИКА',
     name: 'Чаша «Линия»',
     description: 'Скульптурная форма превращает утилитарный предмет в арт-объект.',
     year: '2026',
@@ -71,15 +72,15 @@ const products = [
   },
   {
     image: p08,
-    category: 'МАТЕРИАЛЫ · 08',
-    name: 'Фактура камня',
+    category: '08 / АРТ-ОБЪЕКТЫ',
+    name: 'Форма пространства',
     description: 'Природный рисунок материала раскрывается через контраст и глубину.',
     year: '2025',
     material: 'Натуральный камень',
   },
   {
     image: p09,
-    category: 'МЕБЕЛЬ · 09',
+    category: '09 / МЕБЕЛЬ',
     name: 'Стул «Пауза»',
     description: 'Невесомый силуэт и мягкие пропорции для спокойного созерцания.',
     year: '2026',
@@ -87,7 +88,7 @@ const products = [
   },
   {
     image: p10,
-    category: 'КЕРАМИКА · 10',
+    category: '10 / КЕРАМИКА',
     name: 'Сосуд «Орбита»',
     description: 'Объекты с разной высотой и объёмом, объединённые общей фактурой.',
     year: '2025',
@@ -95,7 +96,7 @@ const products = [
   },
   {
     image: p11,
-    category: 'АРХИТЕКТУРА · 11',
+    category: '11 / АРТ-ОБЪЕКТЫ',
     name: 'Тихая архитектура',
     description: 'Эстетика пространства, света и фактуры.',
     year: '2026',
@@ -103,31 +104,44 @@ const products = [
   },
   {
     image: p12,
-    category: 'ТЕКСТИЛЬ · 12',
+    category: '12 / СВЕТ',
     name: 'Световой объект',
     description: 'Фактуры и приглушённый свет создают цельное настроение.',
     year: '2025',
     material: 'Текстиль · дерево',
   },
 ];
-const filters = ['ВСЕ ОБЪЕКТЫ', 'МЕБЕЛЬ', 'СВЕТ', 'КЕРАМИКА', 'АРТ-ОБЪЕКТЫ', 'МАТЕРИАЛЫ'];
+const filters = [
+  'ВСЁ 12',
+  'МЕБЕЛЬ 03',
+  'СВЕТ 03',
+  'КЕРАМИКА 03',
+  'АРТ-ОБЪЕКТЫ 03',
+];
+
 const active = ref(filters[0]);
 const selected = ref(null);
-const visible = computed(() =>
-  active.value === filters[0]
-    ? products
-    : products.filter((p) => p.category.startsWith(active.value)),
-);
+
+const visible = computed(() => {
+  if (active.value === 'ВСЁ 12') {
+    return products;
+  }
+
+  const categoryName = active.value.replace(/\s+\d+$/, '');
+
+  return products.filter((product) =>
+    product.category.includes(categoryName)
+  );
+});
 </script>
 <template>
   <main class="collection-main">
     <section class="collection-intro">
       <div class="collection-title-row">
         <div>
-          <span class="page-eyebrow">АРХИВ ПРЕДМЕТНОГО ДИЗАЙНА</span>
+          <span class="page-eyebrow">АРХИВ ОБЪЕКТОВ 2026</span>
           <h1>Коллекция <em>форм.</em></h1>
         </div>
-        <span class="collection-count">12 ОБЪЕКТОВ · 2026</span>
       </div>
       <p>Предметы, в которых форма, материал и функция становятся единым высказыванием.</p>
       <div class="collection-filters">
@@ -141,8 +155,8 @@ const visible = computed(() =>
         <span class="product-image-wrap"><img :src="p.image" :alt="p.name" loading="lazy" /></span>
         <span class="product-card-meta">{{ p.category }}</span><span class="product-card-name">{{
           p.name
-        }}</span
-        ><span class="product-card-open">↗</span>
+        }}</span>
+<span class="product-card-open" aria-hidden="true"></span>
       </button>
     </section>
     <div v-if="selected" class="product-modal-backdrop" @click.self="selected = null">

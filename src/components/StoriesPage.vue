@@ -3,6 +3,7 @@ import featuredImage from '../assets/images/png/5-stories-of-objects/Image.png'
 import interiorImage from '../assets/images/png/5-stories-of-objects/Image-1.png'
 import lightImage from '../assets/images/png/5-stories-of-objects/Image-2.png'
 import materialImage from '../assets/images/png/5-stories-of-objects/Image-3.png'
+import arrowIcon from '../assets/images/svg/Arrow 1.2.svg';
 
 const stories = [
   {
