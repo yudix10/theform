@@ -1,4 +1,4 @@
-ф<script setup>
+<script setup>
 import featuredImage from '../assets/images/png/5-stories-of-objects/Image.png'
 import interiorImage from '../assets/images/png/5-stories-of-objects/Image-1.png'
 import lightImage from '../assets/images/png/5-stories-of-objects/Image-2.png'
@@ -69,7 +69,9 @@ const stories = [
             <time>{{ story.date }}</time>
           </div>
           <a class="stories-list-arrow" :href="story.href" :aria-label="`Открыть: ${story.title}`">
-            <span>↗</span>
+          <span>
+            <img :src="arrowIcon" alt="history">
+          </span>
           </a>
         </article>
       </div>
