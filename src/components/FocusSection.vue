@@ -1,7 +1,7 @@
 <script setup>
-import furnitureImage from '../assets/images/png/3-in-focus/in-focus1.png'
-import lightImage from '../assets/images/png/3-in-focus/in-focus2.png'
-import ceramicImage from '../assets/images/png/3-in-focus/in-focus3.png'
+import furnitureImage from '../assets/images/png/3-in-focus/in-focus1.png';
+import lightImage from '../assets/images/png/3-in-focus/in-focus2.png';
+import ceramicImage from '../assets/images/png/3-in-focus/in-focus3.png';
 </script>
 
 <template>
@@ -9,18 +9,13 @@ import ceramicImage from '../assets/images/png/3-in-focus/in-focus3.png'
     <div class="focus-inner">
       <div class="focus-heading">
         <div>
-          <span class="focus-eyebrow">
-          ОТОБРАННОЕ ВРУЧНУЮ
-          </span>
+          <span class="focus-eyebrow"> ОТОБРАННОЕ ВРУЧНУЮ </span>
 
-          <h2>
-          В центре <em>внимания.</em>
-          </h2>
-
+          <h2>В центре <em>внимания.</em></h2>
         </div>
 
         <a href="#collection" class="focus-all">
-        <span>ВСЯ КОЛЛЕКЦИЯ</span>
+          <span>ВСЯ КОЛЛЕКЦИЯ</span>
         </a>
       </div>
 

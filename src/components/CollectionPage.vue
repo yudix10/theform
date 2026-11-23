@@ -111,13 +111,7 @@ const products = [
     material: 'Текстиль · дерево',
   },
 ];
-const filters = [
-  'ВСЁ 12',
-  'МЕБЕЛЬ 03',
-  'СВЕТ 03',
-  'КЕРАМИКА 03',
-  'АРТ-ОБЪЕКТЫ 03',
-];
+const filters = ['ВСЁ 12', 'МЕБЕЛЬ 03', 'СВЕТ 03', 'КЕРАМИКА 03', 'АРТ-ОБЪЕКТЫ 03'];
 
 const active = ref(filters[0]);
 const selected = ref(null);
@@ -129,9 +123,7 @@ const visible = computed(() => {
 
   const categoryName = active.value.replace(/\s+\d+$/, '');
 
-  return products.filter((product) =>
-    product.category.includes(categoryName)
-  );
+  return products.filter((product) => product.category.includes(categoryName));
 });
 </script>
 <template>
@@ -156,7 +148,7 @@ const visible = computed(() => {
         <span class="product-card-meta">{{ p.category }}</span><span class="product-card-name">{{
           p.name
         }}</span>
-<span class="product-card-open" aria-hidden="true"></span>
+        <span class="product-card-open" aria-hidden="true"></span>
       </button>
     </section>
     <div v-if="selected" class="product-modal-backdrop" @click.self="selected = null">
@@ -169,7 +161,7 @@ const visible = computed(() => {
         <div class="modal-meta">
           <span><small>КОЛЛЕКЦИЯ</small>{{ selected.year }}</span
           ><span><small>МАТЕРИАЛ</small>{{ selected.material }}</span
-          ><span><small>СТАТУС</small>В КОЛЛЕКЦИИ</span>
+          ><span><small>ЦЕНА</small>{{ selected.price }}</span>
         </div>
       </article>
     </div>

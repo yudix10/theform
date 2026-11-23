@@ -1,8 +1,8 @@
 <script setup>
-import featuredImage from '../assets/images/png/5-stories-of-objects/Image.png'
-import interiorImage from '../assets/images/png/5-stories-of-objects/Image-1.png'
-import lightImage from '../assets/images/png/5-stories-of-objects/Image-2.png'
-import materialImage from '../assets/images/png/5-stories-of-objects/Image-3.png'
+import featuredImage from '../assets/images/png/5-stories-of-objects/Image.png';
+import interiorImage from '../assets/images/png/5-stories-of-objects/Image-1.png';
+import lightImage from '../assets/images/png/5-stories-of-objects/Image-2.png';
+import materialImage from '../assets/images/png/5-stories-of-objects/Image-3.png';
 import arrowIcon from '../assets/images/svg/Arrow 1.2.svg';
 
 const stories = [
@@ -30,7 +30,7 @@ const stories = [
     href: '#story-materials',
     alt: 'Фактура натурального камня в интерьере',
   },
-]
+];
 </script>
 
 <template>
@@ -49,29 +49,30 @@ const stories = [
           alt="Крупный план деревянного предмета мебели"
         />
         <div class="stories-feature-meta">МАТЕРИАЛЫ · 6 МИНУТ ЧТЕНИЯ</div>
-        <h2>Тактильность как новый<br class="stories-desktop-break" /> язык дизайна.</h2>
+        <h2>
+          Тактильность как новый<br class="stories-desktop-break" />
+          язык дизайна.
+        </h2>
         <p>Почему мы всё чаще выбираем вещи, которые хочется не только видеть, но и ощущать.</p>
         <a class="stories-read-link" href="#story-tactility">ЧИТАТЬ ИСТОРИЮ</a>
       </article>
 
       <div class="stories-list">
-        <article
-          v-for="story in stories"
-          :key="story.href"
-          class="stories-list-item"
-        >
+        <article v-for="story in stories" :key="story.href" class="stories-list-item">
           <a class="stories-list-image" :href="story.href" :aria-label="story.title">
             <img :src="story.image" :alt="story.alt" />
           </a>
           <div class="stories-list-copy">
             <span class="stories-list-meta">{{ story.category }}</span>
-            <h3><a :href="story.href">{{ story.title }}</a></h3>
+            <h3>
+              <a :href="story.href">{{ story.title }}</a>
+            </h3>
             <time>{{ story.date }}</time>
           </div>
           <a class="stories-list-arrow" :href="story.href" :aria-label="`Открыть: ${story.title}`">
-          <span>
-            <img :src="arrowIcon" alt="history">
-          </span>
+            <span>
+              <img :src="arrowIcon" alt="history" />
+            </span>
           </a>
         </article>
       </div>

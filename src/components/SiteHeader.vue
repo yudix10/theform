@@ -1,5 +1,5 @@
 <script setup>
-import logoUrl from '../assets/images/svg/forma-logo.svg'
+import logoUrl from '../assets/images/svg/forma-logo.svg';
 </script>
 
 <template>
@@ -14,8 +14,8 @@ import logoUrl from '../assets/images/svg/forma-logo.svg'
         <span class="brand-name">ФОРМА</span>
       </a>
       <nav class="header-nav" aria-label="Основная навигация">
-        <a href="#home">Главная</a><a href="#collection">Коллекция</a>
-        <a href="#stories">Истории</a><a href="#about">О галерее</a>
+        <a href="#home">Главная</a><a href="#collection">Коллекция</a> <a href="#stories">Истории</a
+        ><a href="#about">О галерее</a>
       </nav>
       <a class="header-contact" href="mailto:hello@forma.gallery">Связаться с нами</a>
       <div class="mobile-category">Объекты · 2026</div>
